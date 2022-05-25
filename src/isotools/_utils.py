@@ -218,7 +218,7 @@ def _corrected_log2OR(con_tab):
 
     for m, n in itertools.product(range(2), range(2)):
         if con_tab[n, m] == 0:
-            con_tab_copy[n, m] = 10**-9
+            con_tab_copy[n, m] = 1
         else:
             con_tab_copy[n, m] = con_tab[n, m]
     log2OR = np.log2((con_tab_copy[0, 0]*con_tab_copy[1, 1])) - np.log2((con_tab_copy[0, 1]*con_tab_copy[1, 0]))
